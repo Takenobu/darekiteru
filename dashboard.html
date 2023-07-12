@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ダッシュボード</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="bg-primary text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1>DAREKITERU</h1>
+      <div id="loggedInUser"></div>
+    </div>
+  </header>
+
+  <main class="container mt-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">在室状況</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="text-primary">在室中</h4>
+            <ul id="presentList" class="list-group"></ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-secondary">不在</h4>
+            <ul id="absentList" class="list-group"></ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-warning">一時不在</h4>
+            <ul id="temporarilyAbsentList" class="list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">連絡事項</h2>
+        <div id="announcement">
+          <div id="chatContainer"></div>
+        </div>
+        <form id="chatForm">
+          <div class="form-group">
+            <input type="text" id="usernameInput" class="form-control" placeholder="ユーザー名" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="messageInput" class="form-control" placeholder="メッセージ" required>
+          </div>
+          <button type="submit" class="btn btn-primary">送信</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <h2>ステータスの更新</h2>
+      <div class="form-group">
+        <label for="status">現在の状態:</label>
+        <select id="status" class="form-control">
+          <option value="present">在室</option>
+          <option value="absent">不在</option>
+          <option value="temporarilyAbsent">一時不在</option>
+        </select>
+      </div>
+      <button id="updateStatusBtn" class="btn btn-primary">更新</button>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

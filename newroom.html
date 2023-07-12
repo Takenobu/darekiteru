@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新しいルーム作成</title>
+  <link rel="stylesheet" href="newroom.css">
+</head>
+<body>
+  <div class="container">
+    <h1>新しいルーム作成</h1>
+    <form id="createRoomForm">
+      <div class="form-group">
+        <label for="roomName">部屋の名前:</label>
+        <input type="text" id="roomName" name="roomName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="roomPassword">ルームパスワード:</label>
+        <input type="text" id="roomPassword" name="roomPassword" required pattern="[0-9]{5}" title="5桁の数字を入力してください">
+      </div>
+
+      <div class="button-group">
+        <button type="submit">ルームを作成</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="newroom.js"></script>
+</body>
+</html>
